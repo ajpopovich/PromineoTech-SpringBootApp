@@ -1,5 +1,6 @@
 package pet.store.entity;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.CascadeType;
@@ -20,6 +21,7 @@ public class Customer {
 @GeneratedValue
 
 private Long customerId;
+private String customerFirstName;
 private String customerLastName;
 private String customerEmail;
 
@@ -27,5 +29,9 @@ private String customerEmail;
 @ToString.Exclude
 @ManyToMany(mappedBy = "customers", cascade = CascadeType.PERSIST)
 private Set<PetStore> petStores;
+
+public Customer() {
+	this.petStores = new HashSet<>();
+}
 
 }

@@ -29,4 +29,9 @@ public class PetStoreEmployee {
         this.employeePhone = employeePhone;
         this.employeeJobTitle = employeeJobTitle;
     }
+    public Long getEmployeeId() {
+        return this.employeeId;
+    }
+
 }
+
